@@ -9,6 +9,9 @@ const fs = require("fs");
 const db = require("./server").db();
 const mongodb = require("mongodb");
 // 1: Kirish
+app.use(express.static('public'));
+  app.use(express.json());
+  app.use(express.urlencoded({extended: true}));
 
 // 2: Session
 
