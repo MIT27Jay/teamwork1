@@ -1,16 +1,23 @@
 {
   "name": "teamwork1",
   "version": "1.0.0",
-  "description": "team work",
+  "description": "Team work project",
   "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon node src/server.js",
-    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jay",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^3.1.10"
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongoose": "^7.6.0",
+    "nodemon": "^3.1.10"
   }
 }

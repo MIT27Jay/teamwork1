@@ -1,8 +1,7 @@
-console.log("start");
+console.log("Web Serverni boshlash");
 
-
-
-
+const db = require("./server").db();
+const mongodb = require("mongodb");
 
 // 1: Kirish
 
@@ -15,4 +14,6 @@ console.log("start");
 // login
 
 // register
+
+module.exports = app;
 
