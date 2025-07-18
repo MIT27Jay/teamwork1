@@ -1,14 +1,14 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const { MongoClient } = require('mongodb');
+const mongodb = require('mongodb');
 const http = require('http');
 const app = require('./app');
 
 const MONGO_URI = process.env.MONGO_URI;
 
 
-MongoClient.connect(MONGO_URI, {
+mongodb.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err, client) => {
@@ -16,8 +16,8 @@ MongoClient.connect(MONGO_URI, {
     console.log(" ERROR on connection MongoDB", err);
   } else {
     console.log(" MongoDB connection succeed");
-    const db = client//.db("TeamPractice1"); // yoki kerakli db nomini yoz
- 
+    const db = client.db();//.db("TeamPractice1"); // yoki kerakli db nomini yoz
+    module.exports = db;
 
     const server = http.createServer(app);
     const PORT = 3003;
@@ -27,6 +27,5 @@ MongoClient.connect(MONGO_URI, {
     });
 
     // agar boshqa joyda kerak bo‘lsa:
-    module.exports = db;
   }
 });

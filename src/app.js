@@ -1,26 +1,27 @@
 console.log("start");
 const express = require("express");
+const path = require('path');
 // const res = require("express/lib/response");
 const app = express();
-const http = require("http");
-const fs = require("fs");
 
 // Mongodb chaqirish 
 const db = require("./server");
+console.log("DOOO>>",typeof db.collection())
 const mongodb = require("mongodb");
 // 1: Kirish
-app.use(express.static('public'));
-  app.use(express.json());
-  app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // 2: Session
 
 // 3: Views
-app.set("views", "views");
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // 4: Routing
 app.get('/', function(req, res){
+  console.log("TYPE>>>", typeof db.collection)
   db.collection('plans')
       .find()
       .toArray((err, data) => {

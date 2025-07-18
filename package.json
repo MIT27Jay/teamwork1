@@ -4,22 +4,17 @@
   "description": "team work",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon node src/server.js",
+    "start": "nodemon src/server.js",
     "dev": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jay",
   "license": "MIT",
   "dependencies": {
-    "18": "^0.0.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.10",
     "express": "^4.18.2",
-    "mongodb": "^3.2.16",
-    "mongoos": "^0.0.1-security",
+    "mongodb": "^3.2.6",
     "nodemon": "^3.1.10"
-  },
-  "devDependencies": {
-    "typescript": "^5.8.3"
   }
 }
