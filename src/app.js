@@ -4,7 +4,6 @@ console.log("start");
 
 
 
-
 // 1: Kirish
 
 // 2: Session
@@ -12,3 +11,8 @@ console.log("start");
 // 3: Views
 
 // 4: Routing
+
+// login
+
+// register
+
