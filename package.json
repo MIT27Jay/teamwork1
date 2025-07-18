@@ -12,11 +12,9 @@
   "author": "Jay",
   "license": "MIT",
   "dependencies": {
-    "connect-mongodb-session": "^5.0.0",
     "dotenv": "^17.2.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "express-session": "^1.18.2",
     "mongodb": "^6.17.0",
     "nodemon": "^3.1.10"
   }

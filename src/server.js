@@ -1,8 +1,7 @@
-const mongodb = require("mongodb");
 const dotenv = require("dotenv");
 require("dotenv").config();
 
-
+const mongodb = require("mongodb");
 
 mongodb.connect(
     connectionString,
