@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,14 +13,15 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-    <div class="main-wrapper">
+  <div class="main-wrapper">
     <div class="text-end">
       <!-- Team nomi DYNAMIC shakilda yozing-->
-  👋 Welcome, <strong>Jay</strong> |
+      👋 Welcome, <strong>Jay</strong> |
       <!-- Team nomi /DYNAMIC shakilda yozing-->
-  <a href="/logout" class="btn btn-outline-danger btn-sm">Logout</a>
-</div>
+      <a href="/logout" class="btn btn-outline-danger btn-sm">Logout</a>
+    </div>
     <h1 class="text-center display-5 mb-4 text-primary">📋 DAILY PLANS</h1>
 
     <!-- Form -->
@@ -27,15 +29,8 @@
       <form id="create-form" action="/create-item" method="POST">
         <div class="row g-3">
           <div class="col-12 col-md-9">
-            <input
-              id="create-field"
-              name="reja"
-              type="text"
-              class="form-control"
-              placeholder="Today's plan..."
-              autocomplete="off"
-              required
-            />
+            <input id="create-field" name="reja" type="text" class="form-control" placeholder="Today's plan..."
+              autocomplete="off" required />
           </div>
           <div class="col-12 col-md-3 d-grid">
             <button class="btn btn-primary btn-rounded" type="submit">
@@ -48,18 +43,21 @@
 
     <!-- Item List DYNAMIC -->
     <ul id="item-list" class="list-group mb-4">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center gap-2">
-          <span class="item-text">
-            Let's start TEAMWORK!
-          </span>
-        </div>
-        <div class="d-flex gap-2">
-          <button data-id="////DYNAMIC////" class="edit-me btn btn-sm btn-outline-secondary">✏️</button>
-          <button data-id="////DYNAMIC////" class="delete-me btn btn-sm btn-outline-danger">🗑️</button>
-        </div>
-      </li>
+      <% items.forEach(function(item){ %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span class="item-text">
+              <%= item.reja %>
+            </span>
+          </div>
+          <div class="d-flex gap-2">
+            <button data-id="<%= item._id %>" class="edit-me btn btn-sm btn-outline-secondary">✏️</button>
+            <button data-id="<%= item._id %>" class="delete-me btn btn-sm btn-outline-danger">🗑️</button>
+          </div>
+        </li>
+        <% }) %> <!-- Bu yopuvchi qavs muhim -->
     </ul>
+
 
     <!-- Delete All Button -->
     <div class="d-grid">
@@ -73,4 +71,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.9.0/axios.min.js"></script>
   <script src="/browser.js"></script>
 </body>
+
 </html>
