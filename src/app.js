@@ -1,4 +1,5 @@
 console.log("Web Serverni boshlash");
+const express = require("express")
 
 const db = require("./server").db();
 const mongodb = require("mongodb");
