@@ -11,6 +11,15 @@
   "author": "Jay",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^3.1.10"
+    "axios": "^1.9.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.10",
+    "expess": "^0.0.1-security",
+    "express": "^5.1.0",
+    "mongodb": "^3.2.6",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
