@@ -1,17 +1,32 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const mongodb = require('mongodb');
 
+const { MongoClient } = require('mongodb');
+const http = require('http');
 const app = require('./app');
 
-mongodb.connect(process.env.MONGO_URL, {})
-.then((data)=> {
-    console.log("Mongodb muoffaqiyatli uladi");
-    const PORT = process.env.PORT ?? 3003;
-    console.log("Hammasi joida");
-    app.listen(PORT, function() {
-        console.info( `The server is running successfully on port ${PORT}`);
-        console.info( `Admin project on http://localhost:${PORT}/admin \n`);
-    })
-})
-.catch((xato) => console.log("Error on connection MongoDB", xato));
+const MONGO_URI = process.env.MONGO_URI;
+
+
+MongoClient.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}, (err, client) => {
+  if (err) {
+    console.log(" ERROR on connection MongoDB", err);
+  } else {
+    console.log(" MongoDB connection succeed");
+    const db = client//.db("TeamPractice1"); // yoki kerakli db nomini yoz
+ 
+
+    const server = http.createServer(app);
+    const PORT = 3003;
+
+    server.listen(PORT, () => {
+      console.log("keldi",  `Server is running: http://localhost:${PORT}`);
+    });
+
+    // agar boshqa joyda kerak bo‘lsa:
+    module.exports = db;
+  }
+});
