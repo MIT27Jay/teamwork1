@@ -6,7 +6,7 @@ const app = express();
 
 // Mongodb chaqirish 
 const db = require("./server");
-console.log("DOOO>>",typeof db.collection())
+// console.log("DOOO>>",typeof db.collection())
 const mongodb = require("mongodb");
 // 1: Kirish
 app.use(express.static(path.join(__dirname, 'public')));
