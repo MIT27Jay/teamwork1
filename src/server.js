@@ -1,18 +1,17 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-import mongodb from 'mongodb';
+const mongodb = require('mongodb');
 
-import app from './app'
+const app = require('./app');
 
-mongodb.connect(process.env.MONGO_URL,{})
+mongodb.connect(process.env.MONGO_URL, {})
 .then((data)=> {
-    console.log("Mongodb muoffaqiyatli uladi")
+    console.log("Mongodb muoffaqiyatli uladi");
     const PORT = process.env.PORT ?? 3003;
-    console.log("Hammsi joida")
+    console.log("Hammasi joida");
     app.listen(PORT, function() {
-        console.info( `The server is rumnning successfully on port ${PORT}`)
-        console.info( `Admin project on http://localhost:${PORT}/admin \n`)
-        
+        console.info( `The server is running successfully on port ${PORT}`);
+        console.info( `Admin project on http://localhost:${PORT}/admin \n`);
     })
 })
-.catch((xato) => console.log("Error on connection Mongsodb"));
+.catch((xato) => console.log("Error on connection MongoDB", xato));

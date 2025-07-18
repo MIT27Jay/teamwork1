@@ -1,15 +1,13 @@
 console.log("start");
-
-import express from "express";
-// import res from "express/lib/response"; // kerak bo‘lsa, alohida tushuntirib beraman
-import http from "http";
-import fs from "fs";
-
-import { db } from "./server.js"; // .js ni yozish shart
-import mongodb from "mongodb";
-
+const express = require("express");
+// const res = require("express/lib/response");
 const app = express();
+const http = require("http");
+const fs = require("fs");
 
+// Mongodb chaqirish 
+const db = require("./server").db();
+const mongodb = require("mongodb");
 // 1: Kirish
 
 // 2: Session
@@ -23,5 +21,4 @@ app.set("view engine", "ejs");
 // login
 
 // register
-
-export default app;
+module.exports = app;
